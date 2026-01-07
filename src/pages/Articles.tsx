@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import AdBlock from "@/components/AdBlock";
 
 interface Article {
   id: string;
@@ -144,9 +145,7 @@ const Articles = () => {
           </p>
         </section>
 
-        <div className="mb-8 p-6 bg-yellow-50 border-2 border-yellow-200 rounded-xl">
-          <p className="text-sm text-yellow-800 font-medium text-center">📢 Реклама</p>
-        </div>
+        <AdBlock blockId="top" className="mb-8" />
 
         {isFormOpen && (
           <Card className="mb-12 border-2 animate-scale-in">
@@ -230,9 +229,7 @@ const Articles = () => {
           </Card>
         )}
 
-        <div className="mb-8 p-6 bg-orange-50 border-2 border-orange-200 rounded-xl">
-          <p className="text-sm text-orange-800 font-medium text-center">📢 Реклама</p>
-        </div>
+        <AdBlock blockId="middle" className="mb-8" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {articles.map((article) => (
@@ -282,9 +279,7 @@ const Articles = () => {
           ))}
         </div>
 
-        <div className="mb-8 p-6 bg-purple-50 border-2 border-purple-200 rounded-xl">
-          <p className="text-sm text-purple-800 font-medium text-center">📢 Реклама</p>
-        </div>
+        <AdBlock blockId="bottom" className="mb-8" />
 
         <footer className="text-center py-8 border-t">
           <p className="text-muted-foreground">

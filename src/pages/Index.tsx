@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 import { useNavigate } from "react-router-dom";
+import AdBlock from "@/components/AdBlock";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -111,9 +112,7 @@ const Index = () => {
             </Button>
           </div>
 
-          <div className="mt-12 p-6 bg-yellow-50 border-2 border-yellow-200 rounded-xl max-w-4xl mx-auto">
-            <p className="text-sm text-yellow-800 font-medium">📢 Реклама</p>
-          </div>
+          <AdBlock blockId="top" className="mt-12" />
         </section>
 
         <section id="methods" className="mb-16">
@@ -183,9 +182,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="p-6 bg-orange-50 border-2 border-orange-200 rounded-xl max-w-4xl mx-auto">
-            <p className="text-sm text-orange-800 font-medium text-center">📢 Реклама</p>
-          </div>
+          <AdBlock blockId="middle" />
         </section>
 
         <section id="articles" className="mb-16">
@@ -230,9 +227,7 @@ const Index = () => {
           </div>
         </section>
 
-        <div className="mb-12 p-6 bg-purple-50 border-2 border-purple-200 rounded-xl max-w-4xl mx-auto">
-          <p className="text-sm text-purple-800 font-medium text-center">📢 Реклама</p>
-        </div>
+        <AdBlock blockId="bottom" className="mb-12" />
 
         <footer className="text-center py-12 border-t">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -250,6 +245,8 @@ const Index = () => {
             <a href="#" className="hover:text-primary transition-colors">Контакты</a>
             <span>•</span>
             <a href="#" className="hover:text-primary transition-colors">Политика конфиденциальности</a>
+            <span>•</span>
+            <button onClick={() => navigate("/admin")} className="hover:text-primary transition-colors">Админ</button>
           </div>
           <p className="text-xs text-muted-foreground mt-4">
             © 2026 Все права защищены
