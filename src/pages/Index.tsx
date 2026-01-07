@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
   const methods = [
     {
       name: "Фриланс",
@@ -96,7 +98,11 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="gradient-bg animate-gradient text-white hover:scale-105 transition-transform text-lg px-8 py-6 rounded-xl shadow-lg">
+            <Button 
+              size="lg" 
+              onClick={() => navigate("/articles")}
+              className="gradient-bg animate-gradient text-white hover:scale-105 transition-transform text-lg px-8 py-6 rounded-xl shadow-lg"
+            >
               <Icon name="ArrowRight" className="mr-2" size={20} />
               Начать сейчас
             </Button>
